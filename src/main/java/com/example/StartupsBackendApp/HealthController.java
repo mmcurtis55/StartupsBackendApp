@@ -13,7 +13,7 @@ public class HealthController {
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/health")
-    public Health healthStatus(@RequestParam(value = "name", defaultValue = "world") String name){
+    public Health healthStatus(@RequestParam(value = "gameId", defaultValue = "world") String name){
         return new Health(String.format(template, name), counter.incrementAndGet());
     }
 }
